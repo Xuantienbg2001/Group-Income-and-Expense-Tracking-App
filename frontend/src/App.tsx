@@ -74,7 +74,7 @@ function App() {
     formData.append('splitFor', JSON.stringify(members)); // Mặc định chia đều cả nhóm
 
     try {
-      const response = await fetch('http://localhost:3000/api/scan-and-split', {
+      const response = await fetch('https://group-income-and-expense-tracking-app.onrender.com/api/scan-and-split', {
         method: 'POST',
         body: formData, // Đẩy thẳng formData chứa file lên backend
       });
