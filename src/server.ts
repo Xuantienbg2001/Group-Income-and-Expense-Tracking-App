@@ -10,7 +10,11 @@ import fs from 'fs';
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', // Cho phép tất cả các nguồn gọi tới (Hoặc bạn điền link vercel của bạn vào đây)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 const uploadDir = path.join(__dirname, '../uploads');
 
